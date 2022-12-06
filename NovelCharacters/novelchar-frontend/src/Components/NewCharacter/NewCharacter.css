@@ -1,0 +1,90 @@
+.main__container {
+    height: 100%;
+    width: 100vw;
+    min-height: 100% !important;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+    padding: 20px 0px;
+    display: block;
+    overflow: auto;
+    align-items: center;
+}
+
+.newcharpage__container {
+    align-items: center;
+}
+
+.newchar__header {
+    padding-top: 25px;
+    padding-left: 5px;
+}
+
+.newchar__header > p {
+    margin-left: 30px;
+    padding-top: 15px;
+    font-size: 27px;
+    font-weight: 500;
+}
+
+.dividor {
+    width: 80%;
+    margin-left: 20px;
+    margin-top: 10px;
+    position: relative;  
+    border: 1px solid #DADDE1;
+}
+
+.newchar__rows {
+    padding-left: 30px;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.form__control {
+    width: 340px;
+    height: 45px;
+    border-radius: 10px;
+    border: 1px solid #DADDE1;
+    margin-top: 10px;
+    font-size: 18px;
+    padding: 0px 15px;
+    display: block;
+    flex-wrap: wrap;
+}
+
+.boxes {
+    display:inline-block;
+    width: 15px;
+    margin: 15px 5px 10px 5px;
+    position: sticky;
+}
+
+.dropdown__content {
+    width: 100px;
+    height: 45px;
+    border-radius: 10px;
+    border: 1px solid #DADDE1;
+    margin-top: 10px;
+    margin-right: 40px;
+    font-size: 18px;
+    padding: 0px 15px;
+    display: inline-block;
+    flex-wrap: wrap;
+}
+
+.footer {
+    text-align: right;
+    margin: 10px 15px;
+}
+
+.submit {
+    width: 90px;
+    height: 30px;
+    margin-bottom: 10px;
+    margin-right: 20px;
+    border-radius: 15px;
+    background-color: aliceblue;
+}
+
+.submit:hover {
+    background-color: aqua;
+}

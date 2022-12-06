@@ -1,0 +1,22 @@
+.novel__main {
+    height: 250px;
+    width: 250px;
+    background: white;
+    margin: 20px;
+}
+
+.novel__name {
+    font-size: 21px;
+    line-height: 27px;
+    font-weight: bold;
+    padding: 15px;
+}
+
+.novel__author {
+    padding-left: 15px;
+}
+
+.novel__footer {
+    padding-left: 15px;
+    padding-top: 150px;
+}

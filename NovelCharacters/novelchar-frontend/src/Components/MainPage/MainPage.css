@@ -1,0 +1,9 @@
+.mainpage {
+    height: 100%;
+    width: 100vw;
+    background-color: lightcoral;
+    background-size: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 30px;
+}

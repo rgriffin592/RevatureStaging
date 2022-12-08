@@ -30,5 +30,8 @@ public class NovelController {
 		return novelService.getAllNovels();
 	}
 	
+	//@GetMapping(path = "/title/{title}")
+	//public List<Novel> getNovelByName
+	
 
 }

@@ -4,7 +4,7 @@ var router = express.Router();
 
 var dogList=[
     {id:1, name: "koda", breed: "bernese mt. dog", color: "black", age: 6, sex: "f"},
-    {id:2, name: "winnie", breed: "great pyrenees", color: "beige", age: 1, sex: "f"},,
+    {id:2, name: "winnie", breed: "great pyrenees", color: "beige", age: 1, sex: "f"},
     {id:3, name: "wiley", breed: "french bulldog", color: "tan", age: 8, sex: "f"}
 ]
 

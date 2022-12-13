@@ -21,7 +21,7 @@ public class Character {
 	
     @Id
     @Column(name = "char_id")
-    @GeneratedValue(generator = "character_id_seq", strategy = GenerationType.AUTO)
+    @GeneratedValue(generator = "character_id_seq", strategy = GenerationType.IDENTITY)
     @SequenceGenerator(allocationSize = 1, name = "character_id_seq")
 	private int charid;
 	

@@ -10,24 +10,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-@Service("novelServiceImpl")
+@Service
 @Transactional
 public class NovelServiceImpl implements NovelService{
 	
 	@Autowired
 	private NovelRepo novelRepo;
-	
-	// Constructor injection
-	@Autowired
-	public NovelServiceImpl(NovelRepo novelRepo) {
-		this.novelRepo = novelRepo;
-	}
-	
-	// Setter injection
-	@Autowired
-	public void setNovelRepo(NovelRepo novelRepo) {
-		this.novelRepo = novelRepo;
-	}
 	
 	@Override
 	public List<Novel> getAllNovels() {
@@ -35,18 +23,18 @@ public class NovelServiceImpl implements NovelService{
 	}
 	
 	@Override
-	public List<Novel> getNovelByTitle(String title) {
-		return novelRepo.findNovelByTitle(title);
+	public List<Novel> getByTitle(String title) {
+		return novelRepo.findByTitle(title);
 	}
 	
 	@Override
-	public List<Novel> getNovelByAuthor(String author) {
-		return novelRepo.findNovelByAuthor(author);
+	public List<Novel> getByAuthor(String author) {
+		return novelRepo.findAllByAuthor(author);
 	}
 	
 	@Override
-	public List<Novel> getNovelByGenre(String genre) {
-		return novelRepo.findNovelByGenre(genre);
+	public List<Novel> getByGenre(String genre) {
+		return novelRepo.findAllByGenre(genre);
 	}
 	
 	
@@ -58,9 +46,9 @@ public class NovelServiceImpl implements NovelService{
 		this.novelRepo.delete(novel);
 	}
 	
-	public void update(Novel novel) {
-		this.novelRepo.update(novel);
-	}
+	//public void update(Novel novel) {
+	//	this.novelRepo.update(novel);
+	//}
 	
 	public Novel findByNovelid(int novelid) {
 		return this.novelRepo.findByNovelid(novelid);

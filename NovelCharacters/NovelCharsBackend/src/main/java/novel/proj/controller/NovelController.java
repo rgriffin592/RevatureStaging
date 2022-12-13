@@ -1,6 +1,6 @@
 package novel.proj.controller;
 
-import java.util.List;
+import java.util.List; 
 
 import novel.proj.models.Novel;
 import novel.proj.service.NovelServiceImpl;
@@ -18,17 +18,17 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
+//import org.springframework.web.client.RestTemplate;
 //import org.springframework.web.client.RestTemplate;
 
-@RestController("novelController")
+@RestController
 @RequestMapping(path = "/novels")
 public class NovelController {
 	
 	@Autowired
 	private NovelServiceImpl novelService;
-	@Autowired
-	private RestTemplate restTemplate;
+	//@Autowired
+	//private RestTemplate restTemplate;
 	
 	@GetMapping(path = "/all")
 	public List<Novel> getAllNovels() {
@@ -37,17 +37,17 @@ public class NovelController {
 	
 	@GetMapping(path = "/title", produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<Novel> getNovelByTitle(@RequestParam String title) {
-		return this.novelService.getNovelByTitle(title);
+		return this.novelService.getByTitle(title);
 	}
 	
 	@GetMapping(path = "/author", produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<Novel> getNovelByAuthor(@RequestParam String author) {
-		return this.novelService.getNovelByAuthor(author);
+		return this.novelService.getByAuthor(author);
 	}
 	
 	@GetMapping(path = "/genre", produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<Novel> getNovelByGenre(@RequestParam String genre) {
-		return this.novelService.getNovelByGenre(genre);
+		return this.novelService.getByGenre(genre);
 	}
 	
 	@PostMapping(path = "/new", consumes = MediaType.APPLICATION_JSON_VALUE)
@@ -55,10 +55,10 @@ public class NovelController {
 		this.novelService.save(novel);
 	}
 	
-	@PutMapping(path = "/update", consumes = MediaType.APPLICATION_JSON_VALUE)
-	public void update(@RequestBody Novel novel) {
-		this.novelService.update(novel);
-	}
+	//@PutMapping(path = "/update", consumes = MediaType.APPLICATION_JSON_VALUE)
+	//public void update(@RequestBody Novel novel) {
+	//	this.novelService.update(novel);
+	//}
 	
 	@DeleteMapping(path = "/delete")
 	public void delete(@RequestBody Novel novel) {

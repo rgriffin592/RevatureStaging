@@ -15,7 +15,7 @@ import java.util.Set;
 public class Novel {
 	
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "novel_id")
 	private int novelid;
 	

@@ -1,6 +1,6 @@
 package novel.proj.controller;
 
-import java.util.List;
+import java.util.List; 
 
 import novel.proj.models.Character;
 import novel.proj.service.CharacterServiceImpl;
@@ -18,36 +18,35 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
+//import org.springframework.web.client.RestTemplate;
 
-@RestController("characterController")
+@RestController
 @RequestMapping(path = "/characters")
 public class CharacterController {
 	
 	@Autowired
 	private CharacterServiceImpl characterService;
-	@Autowired
-	private RestTemplate restTemplate;
+	//@Autowired
+	//private RestTemplate restTemplate;
 	
 	@GetMapping(path = "/all")
 	public List<Character> getAllCharacters() {
 		return characterService.getAllCharacters();
 	}
 	
-	@GetMapping(path = "/novelscharacters", produces = MediaType.APPLICATION_JSON_VALUE)
-	public List<Character> getCharactersByNovelid(@RequestParam int novelid) {
-		return characterService.getCharactersByNovelid(novelid);
-	}
+	//@GetMapping(path = "/novelscharacters", produces = MediaType.APPLICATION_JSON_VALUE)
+	//public List<Character> getCharactersByNovelid(@RequestParam int novelid) {
+	//	return characterService.getCharactersByNovelid(novelid);
+	//}
 	
 	@PostMapping(path = "/new", consumes = MediaType.APPLICATION_JSON_VALUE)
 	public void save(@RequestBody Character character) {
 		this.characterService.save(character);
 	}
 	
-	@PutMapping(path = "/update", consumes = MediaType.APPLICATION_JSON_VALUE)
-	public void update(@RequestBody Character character) {
-		this.characterService.update(character);
-	}
+	//@PutMapping(path = "/update", consumes = MediaType.APPLICATION_JSON_VALUE)
+	//public void update(@RequestBody Character character) {
+	//}
 	
 	@DeleteMapping(path = "/delete")
 	public void delete(@RequestBody Character character) {

@@ -3,18 +3,31 @@ package novel.proj.service;
 import java.util.List;
 
 import novel.proj.models.Novel;
+import novel.proj.repository.CharacterRepo;
 import novel.proj.repository.NovelRepo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-@Service
+@Service("novelServiceImpl")
 @Transactional
 public class NovelServiceImpl implements NovelService{
 	
 	@Autowired
 	private NovelRepo novelRepo;
+	
+	// Constructor injection
+	@Autowired
+	public NovelServiceImpl(NovelRepo novelRepo) {
+		this.novelRepo = novelRepo;
+	}
+	
+	// Setter injection
+	@Autowired
+	public void setNovelRepo(NovelRepo novelRepo) {
+		this.novelRepo = novelRepo;
+	}
 	
 	@Override
 	public List<Novel> getAllNovels() {
@@ -22,8 +35,8 @@ public class NovelServiceImpl implements NovelService{
 	}
 	
 	@Override
-	public List<Novel> getNovelByName(String name) {
-		return novelRepo.findNovelByName(name);
+	public List<Novel> getNovelByTitle(String title) {
+		return novelRepo.findNovelByTitle(title);
 	}
 	
 	@Override
@@ -36,10 +49,6 @@ public class NovelServiceImpl implements NovelService{
 		return novelRepo.findNovelByGenre(genre);
 	}
 	
-	@Override
-	public List<Novel> getNovelBySetting(String setting) {
-		return novelRepo.findNovelBySetting(setting);
-	}
 	
 	public void save(Novel novel) {
 		this.novelRepo.save(novel);

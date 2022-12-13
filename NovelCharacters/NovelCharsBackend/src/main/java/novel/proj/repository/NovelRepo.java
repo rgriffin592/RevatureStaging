@@ -16,16 +16,13 @@ public interface NovelRepo extends JpaRepository<Novel, Integer>{
 	List<Novel> findAllNovels();
 	
 	@Query(nativeQuery = true, value = "SELECT * FROM NOVEL WHERE title=?1")
-	List<Novel> findNovelByName(String name);
+	List<Novel> findNovelByTitle(String title);
 	
 	@Query(nativeQuery = true, value = "SELECT * FROM NOVEL WHERE author=?1")
 	List<Novel> findNovelByAuthor(String author);
 	
 	@Query(nativeQuery = true, value = "SELECT * FROM NOVEL WHERE genre=?1")
 	List<Novel> findNovelByGenre(String genre);
-	
-	@Query(nativeQuery = true, value = "SELECT * FROM NOVEL WHERE setting=?1")
-	List<Novel> findNovelBySetting(String setting);
 	
 	<S extends Novel> S save(Novel novel);
 	void delete(Novel novel);

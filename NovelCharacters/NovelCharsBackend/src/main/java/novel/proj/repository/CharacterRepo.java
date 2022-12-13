@@ -16,8 +16,8 @@ public interface CharacterRepo extends JpaRepository<Character, Integer>{
 	@Query(nativeQuery = true, value = "SELECT * FROM FICTIONAL_CHARACTER")
 	List<Character> findAllCharacters(); // findAllByOrderByCharacterName
 	
-	@Query(nativeQuery = true, value = "SELECT * FROM FICTIONAL_CHARACTER WHERE title=?1")
-	List<Character> findCharactersByNovel(String title); // should be findByNovelId
+	@Query(nativeQuery = true, value = "SELECT * FROM FICTIONAL_CHARACTER WHERE novel_id=?1")
+	List<Character> findCharactersByNovelid(int novelid);
 	
 	/*
 	 * standard CRUD repository don't technically have to be declared
@@ -28,7 +28,7 @@ public interface CharacterRepo extends JpaRepository<Character, Integer>{
 	<S extends Character> S save(Character character);
 	void delete(Character character);
 	void update(Character character);
-	Character findById(int charid);
+	Character findByCharid(int charid);
 	
 	//@Query(nativeQuery = true, value = "INSERT INTO FICTIONAL_CHARACTER (char_name, char_age, char_gender, char_ability, char_description) VALUES (?1, ?2, ?3, ?4, ?5)")
 	//boolean insertCharacter(String charname, String charage, String chargender, int charability, String chardescription);

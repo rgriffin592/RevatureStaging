@@ -16,8 +16,16 @@ public class CharacterServiceImpl implements CharacterService{
 	@Autowired
 	private CharacterRepo characterRepo;
 	
-	public CharacterServiceImpl() {
-		
+	// Constructor injection
+	@Autowired
+	public CharacterServiceImpl(CharacterRepo characterRepo) {
+		this.characterRepo = characterRepo;
+	}
+	
+	// Setter injection
+	@Autowired
+	public void setCharacterRepo(CharacterRepo characterRepo) {
+		this.characterRepo = characterRepo;
 	}
 	
 	// CRUD repo finds, JpaRepo gets
@@ -28,8 +36,8 @@ public class CharacterServiceImpl implements CharacterService{
 	}
 	
 	@Override
-	public List<Character> getCharacterByNovel(String title) {
-		return characterRepo.findCharactersByNovel(title);
+	public List<Character> getCharactersByNovelid(int novelid) {
+		return characterRepo.findCharactersByNovelid(novelid);
 	}
 	
 	public void save(Character character) {
@@ -44,8 +52,8 @@ public class CharacterServiceImpl implements CharacterService{
 		this.characterRepo.update(character);
 	}
 	
-	public Character findById(int charid) {
-		return this.characterRepo.findById(charid);
+	public Character findByCharid(int charid) {
+		return this.characterRepo.findByCharid(charid);
 	}
 	
 	//public boolean insertCharacter(String charName, String charAge, String charGender, String charAbility, String charDescription) {

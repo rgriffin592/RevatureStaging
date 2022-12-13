@@ -7,7 +7,7 @@ public interface CharacterService {
 	
 	List<Character> getAllCharacters();
 	
-	List<Character> getCharacterByNovel(String title);
+	List<Character> getCharactersByNovelid(int novelid);
 	
 	void save(Character character);
 	
@@ -15,10 +15,6 @@ public interface CharacterService {
 	
 	void update(Character character);
 	
-	Character findById(int charid);
+	Character findByCharid(int charid);
 	
-	//boolean insertCharacter(String charName, String charAge, String charGender, String charAbility, String charDescription);
-	
-	//boolean deleteCharacterById(int charId);
-
 }

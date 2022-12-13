@@ -7,13 +7,11 @@ public interface NovelService {
 	
 	List<Novel> getAllNovels();
 	
-	List<Novel> getNovelByName(String name);
+	List<Novel> getNovelByTitle(String title);
 	
 	List<Novel> getNovelByAuthor(String author);
 	
 	List<Novel> getNovelByGenre(String genre);
-	
-	List<Novel> getNovelBySetting(String setting);
 	
 	void save(Novel novel);
 	

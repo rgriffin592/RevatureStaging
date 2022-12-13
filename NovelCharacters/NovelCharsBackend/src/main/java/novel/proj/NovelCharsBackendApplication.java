@@ -22,15 +22,15 @@ public class NovelCharsBackendApplication {
 	 * Yes, we're going to add the RestTemplate as a bean.
 	 */
 
-	// @Bean
-	// public RestTemplate restTemplate() {
-		// RestTemplate restTemplate = new RestTemplate();
+	@Bean
+	public RestTemplate restTemplate() {
+		RestTemplate restTemplate = new RestTemplate();
 		/*
 		 * This step is optional but useful if you're using your RestTemplate to make a request to the exact
 		 * same API each time as it allows us to specify a base URL that we can append to later.
 		 */
-		// restTemplate.setUriTemplateHandler(new DefaultUriBuilderFactory("https://pokeapi.co/api/v2/"));
-		// return restTemplate;
-	// }
+		restTemplate.setUriTemplateHandler(new DefaultUriBuilderFactory("https://novelchars.co/api/v2/"));
+		return restTemplate;
+	}
 
 }
